@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 실습 01</title>
+</head>
+
+<body>
+
+  <div id="box">i am a box, and i have no any friends T_T</div>
+  <div id="box2">i am a box, and i have no any friends T_T</div>
+  <!-- script 태그 안에 작성한 함수에서 this를 작성하면, html 태그에서 onclick 이벤트로 함수를 호출하면 동작하지 않는다. -->
+  <div id="box3" onclick="transText()">i am a box, and i have no any friends T_T</div>
+  <script>
+    const BOX = document.getElementById('box');
+    const BOX2 = document.getElementById('box2');
+    const BOX3 = document.getElementById('box3');
+
+    console.log(BOX, typeof (BOX));
+
+    const changeText = function () {
+      this.innerText = 'i have no any friends T_T';
+    }
+
+    function transText() {
+      BOX3.innerText = 'i have some friends X->';
+    }
+
+    BOX.addEventListener('click', changeText);
+    BOX2.onclick = function () {
+      this.innerText = 'i have a lot of friends~ X-D';
+    }
+  </script>
+</body>
+
+</html>
