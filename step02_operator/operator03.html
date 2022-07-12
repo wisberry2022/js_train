@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연산자03 - 논리 연산자</title>
+</head>
+
+<body>
+
+  <script>
+    let t_bool = true;
+    let f_bool = false;
+    const a = 'inseo';
+
+    console.log(t_bool, t_bool);
+    console.log(!t_bool, !f_bool); // ! -> NOT 부정연산자
+
+    console.log(t_bool && f_bool, f_bool && f_bool, t_bool && t_bool) // AND 연산자
+    console.log(f_bool || t_bool, f_bool || t_bool); // OR 연산자
+
+    a ? console.log(a + 'true') : console.log('false');
+    a && console.log(a + 'true');
+
+    if (!a) {
+      console.log(a + 'true');
+    }
+    else {
+      console.log('false');
+    }
+
+    if (a) {
+      console.log(a + 'true');
+    }
+
+    a || console.log('false');
+
+  </script>
+</body>
+
+</html>

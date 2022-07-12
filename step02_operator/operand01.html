@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연산자01 - 산술 연산자</title>
+</head>
+
+<body>
+  <script>
+    let a = 1;
+    let b = 2;
+
+    console.log(a + b);
+
+    let A = '1';
+    let B = '2';
+
+    const D = '인서';
+
+    console.log(A + B);
+
+    let C = A + B;
+    console.log(C, typeof (C));
+
+    let E = a + A;
+    console.log(E); // 자동으로 형변환(number -> string)이 일어난다... JS의 특징
+
+    console.log(a - b, A - B);
+    console.log(a - b, B - a, A * B, A / B, 1 / 0, b % a);
+
+    let F = 10;
+    let G = 3;
+
+    console.log(F % G, G % F);
+
+    F % 2 ? console.log('홀수') : console.log('짝수');
+  </script>
+</body>
+
+</html>

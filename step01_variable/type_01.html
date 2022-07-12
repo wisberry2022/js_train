@@ -56,6 +56,28 @@
       Boolean(TF),
     );
 
+    const exam_object = {
+      name: 'inseo',
+      age: 27,
+      work: function () {
+        console.log('코딩하기');
+        return 5;
+      }
+    }
+
+    console.log(exam_object.name, exam_object['name']);
+    console.log(exam_object.age);
+    console.log(exam_object.work());
+
+    const array = [1, 2, 3, 4, 5];
+
+    console.log(array[0], array[1], array);
+
+    const func = function () {
+      return 'i am a function';
+    }
+
+    console.log(func());
   </script>
 </body>
 
