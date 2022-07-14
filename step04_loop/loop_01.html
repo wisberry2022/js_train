@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loop State 01 - for문</title>
+</head>
+
+<body>
+  <div id="num">
+    0
+  </div>
+  <ul id="list">
+    <li>sum01</li>
+    <li>sum02</li>
+    <li>sum03</li>
+    <li>sum04</li>
+  </ul>
+
+
+  <script>
+
+    const DATA = ["하나", "둘", "셋", "넷", "다섯"];
+
+    // 요소 하나를 가져올 때 사용
+    const UL = document.querySelector('#list');
+    console.log(UL);
+
+    // 지정한 요소의 전부를 가져올 때 사용
+    const LI = document.querySelectorAll('#list li');
+    console.log(LI);
+
+    for (let i = 0; i < LI.length; i++) {
+      LI[i].style.color = 'red';
+      console.log(LI[i]);
+    }
+
+    // el -> 요소 하나를 의미하는 변수명(el이라 쓰지 않아도 사용자가 원하는대로 사용해도 된다)
+    LI.forEach(el => el.style.color = 'blue');
+
+    UL.addEventListener('click', function () {
+      console.log(this);
+    });
+
+    const NUM = document.querySelector('#num');
+
+    LI.forEach(function (el, idx) {
+      el.addEventListener('click', function () {
+        LI.forEach(function (el) {
+          el.style.color = 'blue';
+        })
+        NUM.innerText = DATA[idx];
+      })
+    });
+
+    for (i = 0; i < DATA.length; i++) {
+      console.log(i, DATA[i]);
+    }
+
+
+  </script>
+</body>
+
+</html>
