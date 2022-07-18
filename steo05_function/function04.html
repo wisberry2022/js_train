@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수 04</title>
+</head>
+
+<body>
+  <script>
+
+    // 콜백함수
+    // function first() { console.log(1); }
+    // function second() { console.log(2); }
+
+    // function Out(cb) {
+    //   cb();
+    // }
+
+    function first() {
+      function second() {
+        function third() {
+          function fourth() {
+            console.log(4);
+          }
+        }
+      }
+    }
+
+    first();
+  </script>
+</body>
+
+</html>
