@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 01 - 생성</title>
+</head>
+
+<body>
+  <div id="App">객체 만들기</div>
+  <div id="This">객체 만들기</div>
+
+  <script>
+    // 1. 객체 리터럴 표기법을 이용한 객체의 생성
+    const INSEO = {
+      name: 'WANG INSEO',
+      age: 27,
+    }
+
+    console.log(INSEO.name + ` 바보`);
+
+    // 2. 객체 생성자함수를 이용한 객체의 생성
+    const HOONI = new Object();
+
+    HOONI['name'] = 'HOONI';
+    HOONI.age = 31;
+    console.log(HOONI);
+
+    // 3. 객체의 메소드: 객체는 속성 (property)과 함수(method)를 가진다. property(key: value)
+    const NAMJUNG = {
+      name: 'PARK NAMJUNG',
+      title: '사랑의 불시착',
+      job: function () {
+        console.log(`뮤직뱅크에서 ${NAMJUNG.title} 공연하기`);
+      }
+    }
+
+    console.log(NAMJUNG['name'], NAMJUNG.name);
+    NAMJUNG.job();
+
+    // 4. 객체에서의 this -> 선언한 객체 자기 자신
+    const HEUNGKOOK = {
+      name: '김흥국',
+      age: 55,
+      job: function () {
+        console.log(`${this.name}과 함께 호랑나비 부르기`);
+      }
+    }
+
+    HEUNGKOOK.job();
+
+    // 5. 객체의 메소드로 arrow function 사용 시 this는 window를 가리키게 된다
+    const JINSUB = {
+      name: '변진섭',
+      title: '숙녀에게',
+      job: () => {
+        console.log(`${JINSUB.name}과 함께 노래하기`);
+      }
+    }
+
+    JINSUB.job();
+
+    // 6. 객체 안 일반적인 함수(무명)에서의 this
+    const lee = {
+      name: 'changhun',
+      job: function () {
+        setInterval(function () {
+          console.log(this.name + '술 마시기');
+        }, 1000);
+      }
+    }
+
+    lee.job();
+
+    // etc. 이벤트 리스너에서의 this
+    // HTML 문서 내 id는 바로 선택이 가능하다. 하지만 비권장
+
+    APP = document.querySelector('#App');
+    APP.addEventListener('click', function () {
+      console.log(this); // 이벤트리스너 function에서의 this는 App
+    })
+
+    This.addEventListener('click', () => {
+      console.log(this) // 화살표 함수에서의 this는 window
+    })
+
+    console.log(this); // this는 window
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 04 - 객체 생성자 함수</title>
+</head>
+
+<body>
+  <script>
+
+    function Lee(name) {
+      this.name = name;
+      this.showName = function () {
+        console.log(`내 이름은 ${this.name}입니다`);
+      }
+    }
+
+    var HOONI = new Lee('이창훈');
+    HOONI.showName();
+
+    var HOONI2 = new Lee('김창훈');
+    HOONI2.showName();
+
+    Lee.prototype.group = '오래된 사람';
+
+    console.log(HOONI);
+    console.log(HOONI.group);
+
+  </script>
+</body>
+
+</html>

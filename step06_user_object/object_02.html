@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 02 - spread 연산자</title>
+</head>
+
+<body>
+  <script>
+    // 1. Spread Operator는 배열 및 객체의 요소를 늘여놓는다
+    const animal = {
+      type: 'Mamalia',
+      leg: 4,
+      mouth: 1,
+    }
+
+    const cow = {
+      ...animal,
+      sound: 'ummah',
+    }
+
+    const horse = {
+      ...animal,
+      sound: 'hihing',
+    }
+
+    const dog = {
+      ...animal,
+      sound: 'bow-wow',
+    }
+
+    const cat = {
+      ...animal,
+      sound: 'Meow',
+    }
+
+    console.log(cow, horse, dog, cat);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 03 - 비구조 할당</title>
+</head>
+
+<body>
+  <p></p>
+  <script>
+    // 비구조할당... javascript 구조분해 
+    const obj = {
+      name: '박남정',
+      age: 50,
+      nickname: 'dance-machine',
+    }
+
+    const { name, age } = obj;
+    const { nickname } = obj;
+
+    console.log(name, age);
+    console.log(nickname);
+  </script>
+</body>
+
+</html>
