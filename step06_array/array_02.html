@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 02</title>
+</head>
+
+<body>
+  <h1>배열을 공부해보자 02</h1>
+  <ul id="UL"></ul>
+  <script>
+    // 1. 배열을 돌아서(순회) 배열 내 데이터 각각을 반환한다 - 일반 for문
+    const arr_1 = ['하나', '두리', '서이', '너이', '다섯'];
+
+    console.log(arr_1.length);
+
+    // 초기값, 비교값, 증가값
+
+    for (i = 0; i < arr_1.length; i++) {
+      console.log(i, arr_1[i]);
+    }
+
+    for (i = arr_1.length - 1; i >= 0; i--) {
+      console.log(i, arr_1[i]);
+    }
+
+    // for ... in문. i는 index key를 반환한다
+    for (i in arr_1) {
+      console.log(arr_1[i]);
+    }
+
+    // for ... of문. i는 value를 반환한다
+    for (i of arr_1) {
+      console.log(i);
+    }
+
+    // for문을 이용해서 html을 생성
+    for (i of arr_1) {
+      UL.innerHTML += '<li>' + i + '</li>'
+    }
+
+
+  </script>
+</body>
+
+</html>

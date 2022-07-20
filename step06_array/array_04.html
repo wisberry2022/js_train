@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 04</title>
+</head>
+
+<body>
+  <h1>배열을 공부해보자 04</h1>
+  <script>
+    // indexOf로 배열 index 받기
+    const arr_0 = [10, 28, 4, 38, 6, 45];
+    const arr_1 = ['하나', '두리', '서이', '너이', '다섯'];
+    const idx = arr_1.indexOf('서이');
+    console.log(idx);
+
+    const arr_2 = arr_1.includes('너이');
+    console.log(arr_2);
+
+    const arr_3 = arr_1.find(el => el === '다섯');
+    console.log(arr_3);
+
+    const arr_4 = arr_0.find(el => el > 10);
+    console.log(arr_4);
+
+    // 새로운 배열을 반환한다
+    const arr_5 = arr_0.filter(el => el > 10);;
+    console.log(arr_5);
+
+    // 새로운 배열을 반환한다
+    const arr_6 = arr_0.slice(3, 4);
+    console.log(arr_6);
+
+    // 기존 배열을 수정한다
+    // 스프레드 연산자를 통해 기존 배열을 복사하여 복사한 배열을 바꾼다. 원본 배열은 수정이 일어나지 않게 된다
+    const arr_7 = [...arr_0].reverse();
+    console.log(arr_7);
+
+    console.log(arr_0);
+  </script>
+</body>
+
+</html>

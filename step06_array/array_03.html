@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 03</title>
+</head>
+
+<body>
+  <h1>배열을 공부해보자 03 - forEach</h1>
+  <div id="tabMenu">
+    <ul class="tMenu">
+      <li>menu01</li>
+      <li>menu02</li>
+      <li>menu03</li>
+    </ul>
+    <div class="tContent">
+      <div>content01</div>
+      <div>content02</div>
+      <div>content03</div>
+    </div>
+  </div>
+
+  <script>
+    const arr_1 = [
+      { id: 1, content: '안녕하세요 적당히 바람이 시원해 기분이 너무 좋아요' },
+      { id: 2, content: '한번만 내 맘을 들어줘 everyday everynight i am missing you' },
+      { id: 3, content: '넌 내게 반했어 웃지말고 대답해봐' },
+      { id: 4, content: '가슴아파도 나 이렇게 웃어요' },
+      { id: 5, content: '안녕 내 사랑 그대여 이젠 내가 지켜줄게요' },
+      { id: 6, content: '어린애처럼 소리쳐 울며 보채야만 내게 돌아올 수 있겠니' },
+    ];
+
+    // 배열을 도와주는 함수 01 forEach
+    arr_1.forEach((el, idx, arry) => console.log(el.content, idx, arry));
+
+    // querySelectorAll을 통해 들어온 데이터는 실질적으로 배열이 아닌 유사배열이다
+    const TUL = document.querySelectorAll('.tMenu>li');
+    const TCONT = document.querySelectorAll('.tContent>div');
+    console.log(TUL);
+
+    TUL.forEach((el, idx) => {
+      el.addEventListener('click', () => {
+        TUL.forEach(el => el.classList.remove('on'));
+        el.classList.add('on');
+        TCONT.forEach(el => el.classList.remove('on'));
+        TCONT[idx].classList.add('on');
+        // console.log(idx);
+      })
+    })
+
+    // 스프레드 연산자를 통해 유사배열을 실제 배열로 만들 수 있다
+    const SPREAD = [...TUL];
+    console.log(SPREAD);
+
+    const UL = document.querySelector('.tMenu');
+    console.log(UL.children);
+    const LI = [...UL.children];
+
+    console.log(LI);
+
+    // indexOf() 함수 ---- 배열의 번호를 반환한다
+    UL.addEventListener('click', e => {
+      let idx = LI.indexOf(e.target);
+      console.log(idx);
+    })
+  </script>
+</body>
+
+</html>
