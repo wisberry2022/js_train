@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul id="UL">
+  </ul>
+  <script>
+    const DATA = [
+      { id: 1, content: "안녕하세요 적당히 바람이 시원해 기분이 너무 좋아요", date: "22.07.01" },
+      { id: 2, content: "제발 그대 가지마요 나랑 여기서 함께 있어줘요", date: "22.07.02" },
+      { id: 3, content: "안녕 내 사랑 그대여 이젠 내가 지켜줄게요", date: "22.07.03" },
+      { id: 4, content: "지나간 시간들은 모두다 되돌릴 수 없겠지", date: "22.07.04" },
+      { id: 5, content: "가슴 아파도 나 이렇게 웃어요", date: "22.07.21" },
+    ]
+
+    const RESULT = DATA.map(data => {
+      return `<li>${data.content}</li>`
+    }).join('');
+
+    document.querySelector('#UL').innerHTML = RESULT;
+
+    const arr_2 = [1, 2, 3, 4, 5]
+    console.log(arr_2.join(''));
+  </script>
+</body>
+
+</html>
