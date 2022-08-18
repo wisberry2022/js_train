@@ -1,0 +1,53 @@
+.Gnb {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.Gnb li {
+  width: 50px;
+}
+
+.Gnb li a 
+{
+  position: relative;
+  display: block;
+  height: 15px;
+  font-size: 0;
+}
+
+.Gnb li a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 30%;
+  height: 1px;
+  background-color: #333;
+  transition: 0.5s;
+}
+
+.Gnb li.on a::after {
+  width: 100%;
+}
+
+.this_page {
+  position: absolute;
+  right: 0;
+  top: -100px;
+  margin: 0 0 20px 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.sectopn .txt {
+  text-align: center;
+  font-size: 100px;
+  opactiy: 0;
+}
+
+#header .on .txt {
+  
+}
