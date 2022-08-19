@@ -35,4 +35,9 @@ $(function () {
     var idx = $(this).index();
     $('.basicSlider').slick('slickGoTo', idx);
   })
+
+  $('.allOpen').on('click', function () {
+    $(this).toggleClass('on');
+    $()
+  })
 })
